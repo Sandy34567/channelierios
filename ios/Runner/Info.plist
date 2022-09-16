@@ -45,13 +45,22 @@
 	<false/>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
-	<key>io.flutter.embedded_views_preview</key><string>yes</string>
-    <key>NSAppTransportSecurity</key>
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSExceptionDomains</key>
     <dict>
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
-        <key>NSAllowsArbitraryLoadsInWebContent</key>
-        <true/>
+        <key>www.mydomain.com</key>
+        <dict>
+            <key>NSIncludesSubdomains</key>
+            <true/>
+            <key>NSExceptionMinimumTLSVersion</key>
+            <string>TLSv1.0</string>
+            <key>NSExceptionRequiresForwardSecrecy</key>
+            <false/>
+            <key>NSExceptionAllowsInsecureHTTPLoads</key>
+            <true/>
+        </dict>
     </dict>
+</dict>
 </dict>
 </plist>
